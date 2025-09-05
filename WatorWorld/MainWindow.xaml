@@ -1,0 +1,48 @@
+﻿<Window x:Class="WatorWorld.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WatorWorld"
+        mc:Ignorable="d"
+        Title="WatorSim" Height="630" Width="840" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <!-- Interface -->
+        <Image x:Name="SimDisplay" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="8" 
+               Stretch="Uniform" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+
+        <!-- User Control -->
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Speed" />
+        <Slider Grid.Column="3" Grid.Row="3" Name="SpeedSlider" Maximum="100" Minimum="10" Width="150" TickPlacement="BottomRight"
+                TickFrequency="10" IsSnapToTickEnabled="True" IsDirectionReversed="True" Value="100"
+                Thumb.DragCompleted="SpeedSlider_DragCompleted"/>
+        
+        <Button Grid.Column="5" Grid.Row="3" Name="StartButton" Content="Start" MinWidth="55" Margin="5, 0" Click="StartButton_Click"/>
+        
+        <Button Grid.Column="6" Grid.Row="3" Name="StopButton" Content="Stop" MinWidth="55" Margin="5, 0" Click="StopButton_Click"/>
+
+        <Button Grid.Column="7" Grid.Row="3" Name="StepButton" Content="Step" MinWidth="55" Margin="5, 0" Click="StepButton_Click"/>
+        
+        <Button Grid.Column="8" Grid.Row="3" Name="ResetButton" Content="Reset" MinWidth="55" Margin="5, 0" Click="ResetButton_Click"/>
+        
+    </Grid>
+</Window>
